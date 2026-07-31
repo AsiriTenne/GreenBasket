@@ -3,8 +3,10 @@ import { CartContext } from '../context/CartContext';
 import { AuthContext } from '../context/AuthContext';
 import { Trash2, Plus, Minus, ArrowRight, ShoppingCart } from 'lucide-react';
 import { toast } from '../components/Toast';
+import { API_BASE_URL } from '../utils/api';
 
-export const Cart = ({ setTab, backendUrl = API_BASE_URL.replace('/api', '') }) => {
+export const Cart = ({ setTab }) => {
+  const backendUrl = API_BASE_URL.replace('/api', '');
   const { 
     cartItems, 
     updateQuantity, 

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
-import api from '../utils/api';
+import api, { API_BASE_URL } from '../utils/api';
 import { CartContext } from '../context/CartContext';
 import { ProductSkeleton } from '../components/Loader';
 import { toast } from '../components/Toast';
@@ -10,9 +10,9 @@ export const Products = ({
   setCategoryFilter, 
   searchQuery, 
   setSearchQuery, 
-  onProductSelect, 
-  backendUrl = API_BASE_URL.replace('/api', '') 
+  onProductSelect 
 }) => {
+  const backendUrl = API_BASE_URL.replace('/api', '');
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(true);

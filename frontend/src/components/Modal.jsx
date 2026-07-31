@@ -1,4 +1,5 @@
 import React from 'react';
+import { API_BASE_URL } from '../utils/api';
 
 export const Modal = ({ isOpen, onClose, title, children }) => {
   if (!isOpen) return null;
@@ -108,8 +109,10 @@ export const ConfirmModal = ({ isOpen, onClose, onConfirm, title, message, confi
   );
 };
 
-export const ProductDetailsModal = ({ isOpen, onClose, product, onAddToCart, backendUrl = API_BASE_URL.replace('/api', '') }) => {
+export const ProductDetailsModal = ({ isOpen, onClose, product, onAddToCart }) => {
   if (!isOpen || !product) return null;
+
+  const backendUrl = API_BASE_URL.replace('/api', '');
 
   const isOutOfStock = product.stock <= 0;
 
