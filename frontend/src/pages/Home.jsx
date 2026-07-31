@@ -5,7 +5,7 @@ import { Spinner } from '../components/Loader';
 import { ArrowRight, Star, ShoppingBag, ShieldCheck, Truck, Sparkles } from 'lucide-react';
 import { toast } from '../components/Toast';
 
-export const Home = ({ setTab, setCategoryFilter, onProductSelect, backendUrl = 'http://localhost:5005' }) => {
+export const Home = ({ setTab, setCategoryFilter, onProductSelect, backendUrl = API_BASE_URL.replace('/api', '') }) => {
   const [featuredProducts, setFeaturedProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const { addToCart } = useContext(CartContext);

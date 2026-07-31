@@ -4,7 +4,7 @@ import { AuthContext } from '../context/AuthContext';
 import { Trash2, Plus, Minus, ArrowRight, ShoppingCart } from 'lucide-react';
 import { toast } from '../components/Toast';
 
-export const Cart = ({ setTab, backendUrl = 'http://localhost:5005' }) => {
+export const Cart = ({ setTab, backendUrl = API_BASE_URL.replace('/api', '') }) => {
   const { 
     cartItems, 
     updateQuantity, 

@@ -108,7 +108,7 @@ export const ConfirmModal = ({ isOpen, onClose, onConfirm, title, message, confi
   );
 };
 
-export const ProductDetailsModal = ({ isOpen, onClose, product, onAddToCart, backendUrl = 'http://localhost:5005' }) => {
+export const ProductDetailsModal = ({ isOpen, onClose, product, onAddToCart, backendUrl = API_BASE_URL.replace('/api', '') }) => {
   if (!isOpen || !product) return null;
 
   const isOutOfStock = product.stock <= 0;

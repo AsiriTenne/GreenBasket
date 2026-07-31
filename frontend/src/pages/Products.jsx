@@ -11,7 +11,7 @@ export const Products = ({
   searchQuery, 
   setSearchQuery, 
   onProductSelect, 
-  backendUrl = 'http://localhost:5005' 
+  backendUrl = API_BASE_URL.replace('/api', '') 
 }) => {
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);

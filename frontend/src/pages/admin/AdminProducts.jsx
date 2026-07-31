@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import api from '../../utils/api';
+import api, { API_BASE_URL } from '../../utils/api';
 import { toast } from '../../components/Toast';
 import { Spinner, TableSkeleton } from '../../components/Loader';
 import { Modal, ConfirmModal } from '../../components/Modal';
 import { Edit, Trash2, Plus, Search, ChevronLeft, ChevronRight, SlidersHorizontal } from 'lucide-react';
 
-export const AdminProducts = ({ backendUrl = 'http://localhost:5005' }) => {
+export const AdminProducts = () => {
+  const backendUrl = API_BASE_URL.replace('/api', '');
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(true);
